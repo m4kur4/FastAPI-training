@@ -11,7 +11,7 @@ async def list_tasks():
 async def create_task(task_body: task_schema.TaskCreate):
     return task_schema.TaskCreateResponse(id=1, **task_body.dict())
 
-@router.put("/tasks/{task_id}", responce_model=task_schema.TaskCreateResponse)
+@router.put("/tasks/{task_id}", response_model=task_schema.TaskCreateResponse)
 async def update_task(task_id: int, task_body: task_schema.TaskCreate):
     return task_schema.TaskCreateResponse(id=task_id, **task_body.dict())
 
